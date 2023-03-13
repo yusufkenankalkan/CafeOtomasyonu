@@ -34,6 +34,7 @@ namespace CafeOtomasyonu.Forms
                 Urun urun = new Urun()
                 {
                     UrunAdi = txtAd.Text,
+                    Fiyat = decimal.Parse(txtFiyat.Text),
                     Kategori = (Kategori)cmbKategori.SelectedItem
                 };
                 Context.Urunler.Add(urun);
@@ -55,8 +56,21 @@ namespace CafeOtomasyonu.Forms
             if (lstListe.SelectedItem == null) return;
             Urun urun = (Urun)lstListe.SelectedItem;
             txtAd.Text = urun.UrunAdi;
+            txtFiyat.Text = urun.Fiyat.ToString();
             cmbKategori.SelectedItem = Context.Kategoriler.Find(x => x.Id == urun.Kategori.Id);
+        }
 
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstListe.SelectedItem == null)
+            {
+                return;
+            }
+            Urun seciliUrun = (Urun)lstListe.SelectedItem;
+            Context.Urunler.Remove(seciliUrun);
+            DataHelpers.Save(Context);
+            lstListe.DataSource = null;
+            lstListe.DataSource = Context.Urunler;
         }
     }
 }

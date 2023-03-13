@@ -56,5 +56,27 @@ namespace CafeOtomasyonu.Forms
         {
             lstListe.DataSource = Context.Kategoriler;
         }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstListe.SelectedItem == null)
+            {
+                return;
+            }
+
+            Kategori seciliKategori = (Kategori)lstListe.SelectedItem;
+            Context.Kategoriler.Remove(seciliKategori);
+            for (int i = 0; i < Context.Urunler.Count; i++)
+            {
+                if (seciliKategori.KategoriIsmi == Context.Urunler[i].Kategori.KategoriIsmi)
+                {
+                    Context.Urunler.Remove(Context.Urunler[i]);
+                    i--;
+                }
+            }
+            lstListe.DataSource = null;
+            lstListe.DataSource = Context.Kategoriler;
+            DataHelpers.Save(Context);
+        }
     }
 }

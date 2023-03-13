@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
@@ -37,6 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiyat = new System.Windows.Forms.TextBox();
+            this.cmsSil = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsSil.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbKategori
@@ -68,6 +72,7 @@
             // 
             // lstListe
             // 
+            this.lstListe.ContextMenuStrip = this.cmsSil;
             this.lstListe.FormattingEnabled = true;
             this.lstListe.ItemHeight = 15;
             this.lstListe.Location = new System.Drawing.Point(262, 12);
@@ -117,6 +122,20 @@
             this.txtFiyat.Size = new System.Drawing.Size(171, 23);
             this.txtFiyat.TabIndex = 20;
             // 
+            // cmsSil
+            // 
+            this.cmsSil.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem});
+            this.cmsSil.Name = "cmsSil";
+            this.cmsSil.Size = new System.Drawing.Size(181, 48);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
             // UrunEkleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -134,6 +153,7 @@
             this.Name = "UrunEkleForm";
             this.Text = "UrunEkleForm";
             this.Load += new System.EventHandler(this.UrunEkleForm_Load);
+            this.cmsSil.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +170,7 @@
         private Label label2;
         private Label label1;
         private TextBox txtFiyat;
+        private ContextMenuStrip cmsSil;
+        private ToolStripMenuItem silToolStripMenuItem;
     }
 }

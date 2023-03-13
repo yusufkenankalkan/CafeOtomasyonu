@@ -15,7 +15,7 @@ namespace CafeOtomasyonu.Classes
 
         public override string ToString()
         {
-            return $"{this.UrunAdi} - {this.Fiyat}";
+            return $"{this.UrunAdi} - {this.Fiyat} ₺ ";
         }
     }
 }

@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnEkle = new System.Windows.Forms.Button();
             this.lstListe = new System.Windows.Forms.ListBox();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSil = new System.Windows.Forms.Button();
+            this.cmsSil = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsSil.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEkle
@@ -47,6 +51,7 @@
             // 
             // lstListe
             // 
+            this.lstListe.ContextMenuStrip = this.cmsSil;
             this.lstListe.FormattingEnabled = true;
             this.lstListe.ItemHeight = 15;
             this.lstListe.Location = new System.Drawing.Point(254, 21);
@@ -80,6 +85,20 @@
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
             // 
+            // cmsSil
+            // 
+            this.cmsSil.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem});
+            this.cmsSil.Name = "cmsSil";
+            this.cmsSil.Size = new System.Drawing.Size(181, 48);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
             // KategoriForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -93,6 +112,7 @@
             this.Name = "KategoriForm";
             this.Text = "KategoriForm";
             this.Load += new System.EventHandler(this.KategoriForm_Load);
+            this.cmsSil.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,5 +125,7 @@
         private TextBox txtAd;
         private Label label1;
         private Button btnSil;
+        private ContextMenuStrip cmsSil;
+        private ToolStripMenuItem silToolStripMenuItem;
     }
 }
