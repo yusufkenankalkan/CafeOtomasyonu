@@ -52,8 +52,15 @@ public partial class Anaform : Form
                 btn.Text = item.MasaIsmi;
                 btn.Size = new Size(80, 80);
                 flMasalar.Controls.Add(btn);
+                btn.Click += Btn_Click;
             }
         }
 
+    }
+    private void Btn_Click(object sender, EventArgs e)
+    {
+        Button btn = sender as Button;
+        MasaForm masaForm = new();
+        masaForm.Show();
     }
 }
