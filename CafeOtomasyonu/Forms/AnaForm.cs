@@ -61,6 +61,7 @@ public partial class Anaform : Form
     {
         Button btn = sender as Button;
         MasaForm masaForm = new();
+        masaForm.Context = Context;
         masaForm.Show();
     }
 }

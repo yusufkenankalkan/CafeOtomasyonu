@@ -62,5 +62,7 @@ namespace CafeOtomasyonu
             _urunEkleForm.Text = "Kategoriler";
             _urunEkleForm.Show();
         }
+
+
     }
 }
