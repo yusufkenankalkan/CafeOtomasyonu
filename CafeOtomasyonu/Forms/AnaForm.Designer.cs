@@ -28,59 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tableLayoutPanel1 = new TableLayoutPanel();
-            flKatlar = new FlowLayoutPanel();
-            flMasalar = new FlowLayoutPanel();
-            tableLayoutPanel1.SuspendLayout();
-            SuspendLayout();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flKatlar = new System.Windows.Forms.FlowLayoutPanel();
+            this.flMasalar = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.8115025F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.1885F));
-            tableLayoutPanel1.Controls.Add(flKatlar, 0, 0);
-            tableLayoutPanel1.Controls.Add(flMasalar, 1, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1565, 1162);
-            tableLayoutPanel1.TabIndex = 0;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.8115F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.1885F));
+            this.tableLayoutPanel1.Controls.Add(this.flKatlar, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flMasalar, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(877, 463);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // flKatlar
             // 
-            flKatlar.Dock = DockStyle.Fill;
-            flKatlar.FlowDirection = FlowDirection.TopDown;
-            flKatlar.Location = new Point(4, 4);
-            flKatlar.Name = "flKatlar";
-            flKatlar.Size = new Size(350, 1154);
-            flKatlar.TabIndex = 0;
-            flKatlar.Paint += flKatlar_Paint;
+            this.flKatlar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flKatlar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flKatlar.Location = new System.Drawing.Point(3, 2);
+            this.flKatlar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.flKatlar.Name = "flKatlar";
+            this.flKatlar.Size = new System.Drawing.Size(195, 459);
+            this.flKatlar.TabIndex = 0;
             // 
             // flMasalar
             // 
-            flMasalar.Dock = DockStyle.Fill;
-            flMasalar.Location = new Point(361, 4);
-            flMasalar.Name = "flMasalar";
-            flMasalar.Size = new Size(1200, 1154);
-            flMasalar.TabIndex = 1;
+            this.flMasalar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flMasalar.Location = new System.Drawing.Point(203, 2);
+            this.flMasalar.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.flMasalar.Name = "flMasalar";
+            this.flMasalar.Size = new System.Drawing.Size(671, 459);
+            this.flMasalar.TabIndex = 1;
             // 
             // Anaform
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1565, 1162);
-            Controls.Add(tableLayoutPanel1);
-            Name = "Anaform";
-            Text = "Anaform";
-            Load += Anaform_Load;
-            tableLayoutPanel1.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(877, 463);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Name = "Anaform";
+            this.Text = "Anaform";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

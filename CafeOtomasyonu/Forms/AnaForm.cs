@@ -7,17 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CafeOtomasyonu.Classes;
 
 namespace CafeOtomasyonu.Forms;
 
 public partial class Anaform : Form
 {
-    public DataContext Context { get; set; }
+
     public Anaform()
     {
         InitializeComponent();
     }
+    public DataContext Context { get; set; }
 
+    
     private void Anaform_Load(object sender, EventArgs e)
     {
         foreach (var item in Context.Kats)
@@ -44,6 +47,8 @@ public partial class Anaform : Form
     private void KatButon_Click(object sender, EventArgs e)
     {
         flMasalar.Controls.Clear();
+
+
         foreach (var item in Context.Masalar)
         {
             if (item.BulunduguKat.KatIsmi == (sender as Button).Text)
@@ -53,6 +58,7 @@ public partial class Anaform : Form
                 btn.Size = new Size(80, 80);
                 flMasalar.Controls.Add(btn);
                 btn.Click += Btn_Click;
+
             }
         }
 
@@ -63,5 +69,6 @@ public partial class Anaform : Form
         MasaForm masaForm = new();
         masaForm.Context = Context;
         masaForm.Show();
+
     }
 }

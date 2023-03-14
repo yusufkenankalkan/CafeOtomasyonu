@@ -13,6 +13,7 @@ namespace CafeOtomasyonu.Classes
         public decimal Fiyat { get; set; }
         public Kategori Kategori { get; set; }
 
+        public byte[]? Foto { get; set; } = null;
         public override string ToString()
         {
             return $"{this.UrunAdi} - {this.Fiyat} ₺ ";

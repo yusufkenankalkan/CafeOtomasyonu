@@ -19,9 +19,12 @@ namespace CafeOtomasyonu.Forms
             InitializeComponent();
         }
 
+        
+
         private void MasaForm_Load(object sender, EventArgs e)
         {
             cmbKategori.DataSource = Context.Kategoriler;
+            
         }
 
         private void cmbKategori_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,6 +48,7 @@ namespace CafeOtomasyonu.Forms
             urun.UrunAdi = seciliUrun.UrunAdi;
             urun.Fiyat = seciliUrun.Fiyat;
             urun.Kategori = seciliUrun.Kategori;
+            
         }
     }
 }

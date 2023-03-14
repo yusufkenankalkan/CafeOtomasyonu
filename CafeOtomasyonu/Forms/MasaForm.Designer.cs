@@ -28,54 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            cmbUrun = new ComboBox();
-            cmbKategori = new ComboBox();
-            btnEkle = new Button();
-            SuspendLayout();
+            this.cmbUrun = new System.Windows.Forms.ComboBox();
+            this.cmbKategori = new System.Windows.Forms.ComboBox();
+            this.btnEkle = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // cmbUrun
             // 
-            cmbUrun.FormattingEnabled = true;
-            cmbUrun.Location = new Point(179, 30);
-            cmbUrun.Margin = new Padding(2, 1, 2, 1);
-            cmbUrun.Name = "cmbUrun";
-            cmbUrun.Size = new Size(132, 23);
-            cmbUrun.TabIndex = 0;
+            this.cmbUrun.FormattingEnabled = true;
+            this.cmbUrun.Location = new System.Drawing.Point(179, 30);
+            this.cmbUrun.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cmbUrun.Name = "cmbUrun";
+            this.cmbUrun.Size = new System.Drawing.Size(132, 23);
+            this.cmbUrun.TabIndex = 0;
             // 
             // cmbKategori
             // 
-            cmbKategori.FormattingEnabled = true;
-            cmbKategori.Location = new Point(26, 30);
-            cmbKategori.Margin = new Padding(2, 1, 2, 1);
-            cmbKategori.Name = "cmbKategori";
-            cmbKategori.Size = new Size(132, 23);
-            cmbKategori.TabIndex = 1;
-            cmbKategori.SelectedIndexChanged += cmbKategori_SelectedIndexChanged;
+            this.cmbKategori.FormattingEnabled = true;
+            this.cmbKategori.Location = new System.Drawing.Point(26, 30);
+            this.cmbKategori.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.cmbKategori.Name = "cmbKategori";
+            this.cmbKategori.Size = new System.Drawing.Size(132, 23);
+            this.cmbKategori.TabIndex = 1;
+            this.cmbKategori.SelectedIndexChanged += new System.EventHandler(this.cmbKategori_SelectedIndexChanged);
             // 
             // btnEkle
             // 
-            btnEkle.Location = new Point(164, 102);
-            btnEkle.Margin = new Padding(2, 1, 2, 1);
-            btnEkle.Name = "btnEkle";
-            btnEkle.Size = new Size(81, 22);
-            btnEkle.TabIndex = 2;
-            btnEkle.Text = "Ekle";
-            btnEkle.UseVisualStyleBackColor = true;
-            btnEkle.Click += btnEkle_Click;
+            this.btnEkle.Location = new System.Drawing.Point(105, 89);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(81, 22);
+            this.btnEkle.TabIndex = 2;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // MasaForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(509, 260);
-            Controls.Add(btnEkle);
-            Controls.Add(cmbKategori);
-            Controls.Add(cmbUrun);
-            Margin = new Padding(2, 1, 2, 1);
-            Name = "MasaForm";
-            Text = "MasaForm";
-            Load += MasaForm_Load;
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(819, 446);
+            this.Controls.Add(this.btnEkle);
+            this.Controls.Add(this.cmbKategori);
+            this.Controls.Add(this.cmbUrun);
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Name = "MasaForm";
+            this.Text = "MasaForm";
+            this.Load += new System.EventHandler(this.MasaForm_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

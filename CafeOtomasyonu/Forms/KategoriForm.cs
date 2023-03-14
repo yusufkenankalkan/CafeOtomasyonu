@@ -57,7 +57,8 @@ namespace CafeOtomasyonu.Forms
             lstListe.DataSource = Context.Kategoriler;
         }
 
-        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void btnSil_Click(object sender, EventArgs e)
         {
             if (lstListe.SelectedItem == null)
             {

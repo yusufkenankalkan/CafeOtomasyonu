@@ -22,7 +22,7 @@ namespace CafeOtomasyonu.Forms
 
         private void UrunEkleForm_Load(object sender, EventArgs e)
         {
-            
+
             cmbKategori.DataSource = Context.Kategoriler;
             lstListe.DataSource = Context.Urunler;
         }
@@ -37,6 +37,11 @@ namespace CafeOtomasyonu.Forms
                     Fiyat = decimal.Parse(txtFiyat.Text),
                     Kategori = (Kategori)cmbKategori.SelectedItem
                 };
+                if (pbResim.Image != null)
+                {
+                    urun.Foto = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
+                }
+                
                 Context.Urunler.Add(urun);
 
                 lstListe.DataSource = null;
@@ -57,10 +62,15 @@ namespace CafeOtomasyonu.Forms
             Urun urun = (Urun)lstListe.SelectedItem;
             txtAd.Text = urun.UrunAdi;
             txtFiyat.Text = urun.Fiyat.ToString();
+            if (urun.Foto != null)
+            {
+                pbResim.Image = (Image)(new ImageConverter().ConvertFrom(urun.Foto));
+            }
             cmbKategori.SelectedItem = Context.Kategoriler.Find(x => x.Id == urun.Kategori.Id);
         }
 
-        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void btnSil_Click(object sender, EventArgs e)
         {
             if (lstListe.SelectedItem == null)
             {
@@ -71,6 +81,19 @@ namespace CafeOtomasyonu.Forms
             DataHelpers.Save(Context);
             lstListe.DataSource = null;
             lstListe.DataSource = Context.Urunler;
+        }
+
+        private void pbResim_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dosyaAc = new OpenFileDialog();
+            dosyaAc.Title = "Resim Seçiniz";
+            dosyaAc.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            dosyaAc.Multiselect = false;
+            dosyaAc.Filter = "Resim Dosyası |*.jpg;*.png;*.jpeg;";
+            if (dosyaAc.ShowDialog() == DialogResult.OK)
+            {
+                pbResim.Image = Image.FromFile(dosyaAc.FileName);
+            }
         }
     }
 }

@@ -7,8 +7,10 @@ namespace CafeOtomasyonu
     {
         KatOlusturucuForm _katOlusturucuForm;
         Anaform _anaform;
+        AnaEkranForm _anaEkranForm;
         KategoriForm _kategoriForm;
         UrunEkleForm _urunEkleForm;
+        
         DataContext _datacontext = new DataContext();
         public Form1()
         {
@@ -35,13 +37,21 @@ namespace CafeOtomasyonu
         //anasayfa
         private void katlariGoruntuleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_anaform == null || _anaform.IsDisposed)
+            //if (_anaform == null || _anaform.IsDisposed)
+            //{
+            //    _anaform = new Anaform();
+            //    _anaform.Context = _datacontext;
+            //    _anaform.Text = "Katlar";
+            //    _anaform.Show();
+            //}
+            if (_anaEkranForm == null || _anaEkranForm.IsDisposed)
             {
-                _anaform = new Anaform();
-                _anaform.Context = _datacontext;
-                _anaform.Text = "Katlar";
-                _anaform.Show();
+                _anaEkranForm = new AnaEkranForm();
+                _anaEkranForm.Context = _datacontext;
+                _anaEkranForm.Text = "Katlar";
+                _anaEkranForm.Show();
             }
+
         }
 
         private void urunKategoriEkleToolStripMenuItem_Click(object sender, EventArgs e)

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
@@ -38,9 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiyat = new System.Windows.Forms.TextBox();
-            this.cmsSil = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmsSil.SuspendLayout();
+            this.pbResim = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbResim)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbKategori
@@ -53,16 +51,17 @@
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(169, 130);
+            this.btnSil.Location = new System.Drawing.Point(169, 290);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(77, 56);
             this.btnSil.TabIndex = 17;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnEkle
             // 
-            this.btnEkle.Location = new System.Drawing.Point(75, 130);
+            this.btnEkle.Location = new System.Drawing.Point(75, 290);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(77, 56);
             this.btnEkle.TabIndex = 16;
@@ -72,12 +71,11 @@
             // 
             // lstListe
             // 
-            this.lstListe.ContextMenuStrip = this.cmsSil;
             this.lstListe.FormattingEnabled = true;
             this.lstListe.ItemHeight = 15;
             this.lstListe.Location = new System.Drawing.Point(262, 12);
             this.lstListe.Name = "lstListe";
-            this.lstListe.Size = new System.Drawing.Size(159, 304);
+            this.lstListe.Size = new System.Drawing.Size(159, 334);
             this.lstListe.TabIndex = 18;
             this.lstListe.SelectedIndexChanged += new System.EventHandler(this.lstListe_SelectedIndexChanged);
             // 
@@ -122,25 +120,22 @@
             this.txtFiyat.Size = new System.Drawing.Size(171, 23);
             this.txtFiyat.TabIndex = 20;
             // 
-            // cmsSil
+            // pbResim
             // 
-            this.cmsSil.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.silToolStripMenuItem});
-            this.cmsSil.Name = "cmsSil";
-            this.cmsSil.Size = new System.Drawing.Size(181, 48);
-            // 
-            // silToolStripMenuItem
-            // 
-            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.silToolStripMenuItem.Text = "Sil";
-            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            this.pbResim.Location = new System.Drawing.Point(75, 145);
+            this.pbResim.Name = "pbResim";
+            this.pbResim.Size = new System.Drawing.Size(171, 126);
+            this.pbResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbResim.TabIndex = 21;
+            this.pbResim.TabStop = false;
+            this.pbResim.Click += new System.EventHandler(this.pbResim_Click);
             // 
             // UrunEkleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 365);
+            this.ClientSize = new System.Drawing.Size(472, 410);
+            this.Controls.Add(this.pbResim);
             this.Controls.Add(this.txtFiyat);
             this.Controls.Add(this.cmbKategori);
             this.Controls.Add(this.btnSil);
@@ -153,7 +148,7 @@
             this.Name = "UrunEkleForm";
             this.Text = "UrunEkleForm";
             this.Load += new System.EventHandler(this.UrunEkleForm_Load);
-            this.cmsSil.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbResim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,7 +165,6 @@
         private Label label2;
         private Label label1;
         private TextBox txtFiyat;
-        private ContextMenuStrip cmsSil;
-        private ToolStripMenuItem silToolStripMenuItem;
+        private PictureBox pbResim;
     }
 }
