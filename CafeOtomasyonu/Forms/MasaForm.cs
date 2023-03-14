@@ -40,7 +40,7 @@ namespace CafeOtomasyonu.Forms
         private void btnEkle_Click(object sender, EventArgs e)
         {
             Masa masa = new Masa();
-            masa = Context.Masalar.Find(x => x.masa_id == masa.masa_id);
+            masa = Context.Masalar.Find(x => x.Id == masa.Id);
 
             //foto ekle
             Urun urun = new Urun();

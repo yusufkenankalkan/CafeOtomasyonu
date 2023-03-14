@@ -18,10 +18,11 @@ namespace CafeOtomasyonu.Forms
         {
             InitializeComponent();
         }
+        private Masa _seciliMasa;
         public DataContext Context { get; set; }
         private void AnaEkranForm_Load(object sender, EventArgs e)
         {
-            
+
 
             foreach (var item in Context.Kats)
             {
@@ -38,13 +39,14 @@ namespace CafeOtomasyonu.Forms
             flMasalar.Controls.Clear();
             cmbKategori.DataSource = null;
             cmbUrun.DataSource = null;
-            
+            pbResim.Image = null;
 
             foreach (var item in Context.Masalar)
             {
                 if (item.BulunduguKat.KatIsmi == (sender as Button).Text)
                 {
                     Button btn = new Button();
+                    btn.Name = item.Id.ToString();
                     btn.Text = item.MasaIsmi;
                     btn.Size = new Size(80, 80);
                     flMasalar.Controls.Add(btn);
@@ -55,7 +57,15 @@ namespace CafeOtomasyonu.Forms
         }
         private void Btn_Click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
+            foreach (var item in Context.Kategoriler)
+            {
+                Button btnKategori = new Button();
+                btnKategori.Text = item.KategoriIsmi;
+                btnKategori.Size = new Size(125, 50);
+
+
+            }
+            _seciliMasa = Context.Masalar.Find(x => x.Id.ToString() == (sender as Button).Name);
             cmbKategori.DataSource = Context.Kategoriler;
 
         }
@@ -69,5 +79,15 @@ namespace CafeOtomasyonu.Forms
                 .ToList();
         }
 
+        private void cmbUrun_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbKategori.SelectedIndex == -1) return;
+            Urun urun = (Urun)cmbUrun.SelectedItem;
+            if (urun.Foto != null)
+            {
+                pbResim.Image = (Image)(new ImageConverter().ConvertFrom(urun.Foto));
+            }
+
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace CafeOtomasyonu.Classes;
 
 public class Masa
 {
-    public Guid masa_id { get; set; } = Guid.NewGuid();
+    public Guid Id { get; set; } = Guid.NewGuid();
     public string MasaIsmi { get; set; }
     public Kat BulunduguKat { get; set; }
 }
