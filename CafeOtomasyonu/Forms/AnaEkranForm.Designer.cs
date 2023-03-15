@@ -28,170 +28,173 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flKatlar = new FlowLayoutPanel();
-            flMasalar = new FlowLayoutPanel();
-            tblUrun = new TableLayoutPanel();
-            cmbUrun = new ComboBox();
-            cmbKategori = new ComboBox();
-            pbResim = new PictureBox();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            BtnSil = new Button();
-            btnEkle = new Button();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            lstHesap = new ListBox();
-            tblUrun.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbResim).BeginInit();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            SuspendLayout();
+            this.flKatlar = new System.Windows.Forms.FlowLayoutPanel();
+            this.flMasalar = new System.Windows.Forms.FlowLayoutPanel();
+            this.tblUrun = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbUrun = new System.Windows.Forms.ComboBox();
+            this.cmbKategori = new System.Windows.Forms.ComboBox();
+            this.pbResim = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnSil = new System.Windows.Forms.Button();
+            this.btnEkle = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lstHesap = new System.Windows.Forms.ListBox();
+            this.tblUrun.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbResim)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // flKatlar
             // 
-            flKatlar.Dock = DockStyle.Left;
-            flKatlar.Location = new Point(0, 0);
-            flKatlar.Name = "flKatlar";
-            flKatlar.Size = new Size(171, 453);
-            flKatlar.TabIndex = 0;
+            this.flKatlar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flKatlar.Location = new System.Drawing.Point(0, 0);
+            this.flKatlar.Name = "flKatlar";
+            this.flKatlar.Size = new System.Drawing.Size(171, 453);
+            this.flKatlar.TabIndex = 0;
             // 
             // flMasalar
             // 
-            flMasalar.Dock = DockStyle.Left;
-            flMasalar.Location = new Point(171, 0);
-            flMasalar.Name = "flMasalar";
-            flMasalar.Size = new Size(384, 453);
-            flMasalar.TabIndex = 1;
+            this.flMasalar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.flMasalar.Location = new System.Drawing.Point(171, 0);
+            this.flMasalar.Name = "flMasalar";
+            this.flMasalar.Size = new System.Drawing.Size(384, 453);
+            this.flMasalar.TabIndex = 1;
             // 
             // tblUrun
             // 
-            tblUrun.ColumnCount = 1;
-            tblUrun.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tblUrun.Controls.Add(cmbUrun, 0, 1);
-            tblUrun.Controls.Add(cmbKategori, 0, 0);
-            tblUrun.Controls.Add(pbResim, 0, 2);
-            tblUrun.Controls.Add(tableLayoutPanel2, 0, 3);
-            tblUrun.Controls.Add(tableLayoutPanel1, 0, 4);
-            tblUrun.Dock = DockStyle.Fill;
-            tblUrun.Location = new Point(555, 0);
-            tblUrun.Name = "tblUrun";
-            tblUrun.RowCount = 5;
-            tblUrun.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tblUrun.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
-            tblUrun.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tblUrun.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
-            tblUrun.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tblUrun.Size = new Size(252, 453);
-            tblUrun.TabIndex = 2;
+            this.tblUrun.ColumnCount = 1;
+            this.tblUrun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblUrun.Controls.Add(this.cmbUrun, 0, 1);
+            this.tblUrun.Controls.Add(this.cmbKategori, 0, 0);
+            this.tblUrun.Controls.Add(this.pbResim, 0, 2);
+            this.tblUrun.Controls.Add(this.tableLayoutPanel2, 0, 3);
+            this.tblUrun.Controls.Add(this.tableLayoutPanel1, 0, 4);
+            this.tblUrun.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblUrun.Location = new System.Drawing.Point(555, 0);
+            this.tblUrun.Name = "tblUrun";
+            this.tblUrun.RowCount = 5;
+            this.tblUrun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblUrun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblUrun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tblUrun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tblUrun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tblUrun.Size = new System.Drawing.Size(252, 453);
+            this.tblUrun.TabIndex = 2;
             // 
             // cmbUrun
             // 
-            cmbUrun.Dock = DockStyle.Fill;
-            cmbUrun.FormattingEnabled = true;
-            cmbUrun.Location = new Point(3, 57);
-            cmbUrun.Margin = new Padding(3, 12, 3, 3);
-            cmbUrun.Name = "cmbUrun";
-            cmbUrun.Size = new Size(246, 23);
-            cmbUrun.TabIndex = 2;
-            cmbUrun.SelectedIndexChanged += cmbUrun_SelectedIndexChanged;
+            this.cmbUrun.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbUrun.FormattingEnabled = true;
+            this.cmbUrun.Location = new System.Drawing.Point(3, 57);
+            this.cmbUrun.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
+            this.cmbUrun.Name = "cmbUrun";
+            this.cmbUrun.Size = new System.Drawing.Size(246, 23);
+            this.cmbUrun.TabIndex = 2;
+            this.cmbUrun.SelectedIndexChanged += new System.EventHandler(this.cmbUrun_SelectedIndexChanged);
             // 
             // cmbKategori
             // 
-            cmbKategori.Dock = DockStyle.Fill;
-            cmbKategori.FormattingEnabled = true;
-            cmbKategori.Location = new Point(3, 12);
-            cmbKategori.Margin = new Padding(3, 12, 3, 3);
-            cmbKategori.Name = "cmbKategori";
-            cmbKategori.Size = new Size(246, 23);
-            cmbKategori.TabIndex = 1;
-            cmbKategori.SelectedIndexChanged += cmbKategori_SelectedIndexChanged;
+            this.cmbKategori.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbKategori.FormattingEnabled = true;
+            this.cmbKategori.Location = new System.Drawing.Point(3, 12);
+            this.cmbKategori.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
+            this.cmbKategori.Name = "cmbKategori";
+            this.cmbKategori.Size = new System.Drawing.Size(246, 23);
+            this.cmbKategori.TabIndex = 1;
+            this.cmbKategori.SelectedIndexChanged += new System.EventHandler(this.cmbKategori_SelectedIndexChanged);
             // 
             // pbResim
             // 
-            pbResim.Location = new Point(33, 110);
-            pbResim.Margin = new Padding(33, 20, 3, 3);
-            pbResim.Name = "pbResim";
-            pbResim.Size = new Size(181, 143);
-            pbResim.SizeMode = PictureBoxSizeMode.StretchImage;
-            pbResim.TabIndex = 3;
-            pbResim.TabStop = false;
+            this.pbResim.Location = new System.Drawing.Point(33, 110);
+            this.pbResim.Margin = new System.Windows.Forms.Padding(33, 20, 3, 3);
+            this.pbResim.Name = "pbResim";
+            this.pbResim.Size = new System.Drawing.Size(181, 143);
+            this.pbResim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbResim.TabIndex = 3;
+            this.pbResim.TabStop = false;
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(BtnSil, 1, 0);
-            tableLayoutPanel2.Controls.Add(btnEkle, 0, 0);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 274);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(246, 61);
-            tableLayoutPanel2.TabIndex = 4;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.BtnSil, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnEkle, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 274);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(246, 61);
+            this.tableLayoutPanel2.TabIndex = 4;
             // 
             // BtnSil
             // 
-            BtnSil.Location = new Point(140, 12);
-            BtnSil.Margin = new Padding(17, 12, 3, 3);
-            BtnSil.Name = "BtnSil";
-            BtnSil.Size = new Size(86, 35);
-            BtnSil.TabIndex = 1;
-            BtnSil.Text = "Sil";
-            BtnSil.UseVisualStyleBackColor = true;
+            this.BtnSil.Location = new System.Drawing.Point(140, 12);
+            this.BtnSil.Margin = new System.Windows.Forms.Padding(17, 12, 3, 3);
+            this.BtnSil.Name = "BtnSil";
+            this.BtnSil.Size = new System.Drawing.Size(86, 35);
+            this.BtnSil.TabIndex = 1;
+            this.BtnSil.Text = "Sil";
+            this.BtnSil.UseVisualStyleBackColor = true;
             // 
             // btnEkle
             // 
-            btnEkle.Location = new Point(17, 12);
-            btnEkle.Margin = new Padding(17, 12, 3, 3);
-            btnEkle.Name = "btnEkle";
-            btnEkle.Size = new Size(86, 35);
-            btnEkle.TabIndex = 0;
-            btnEkle.Text = "Ekle";
-            btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Location = new System.Drawing.Point(17, 12);
+            this.btnEkle.Margin = new System.Windows.Forms.Padding(17, 12, 3, 3);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(86, 35);
+            this.btnEkle.TabIndex = 0;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.UseVisualStyleBackColor = true;
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(lstHesap, 0, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(3, 341);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(246, 109);
-            tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.lstHesap, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 341);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(246, 109);
+            this.tableLayoutPanel1.TabIndex = 5;
             // 
             // lstHesap
             // 
-            lstHesap.Dock = DockStyle.Fill;
-            lstHesap.ItemHeight = 15;
-            lstHesap.Location = new Point(3, 3);
-            lstHesap.Name = "lstHesap";
-            lstHesap.Size = new Size(117, 103);
-            lstHesap.TabIndex = 0;
+            this.lstHesap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstHesap.ItemHeight = 15;
+            this.lstHesap.Location = new System.Drawing.Point(3, 3);
+            this.lstHesap.Name = "lstHesap";
+            this.lstHesap.Size = new System.Drawing.Size(117, 103);
+            this.lstHesap.TabIndex = 0;
+            this.lstHesap.SelectedIndexChanged += new System.EventHandler(this.lstHesap_SelectedIndexChanged);
             // 
             // AnaEkranForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
-            ClientSize = new Size(807, 453);
-            Controls.Add(tblUrun);
-            Controls.Add(flMasalar);
-            Controls.Add(flKatlar);
-            Name = "AnaEkranForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "AnaEkranForm";
-            Load += AnaEkranForm_Load;
-            tblUrun.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pbResim).EndInit();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(807, 453);
+            this.Controls.Add(this.tblUrun);
+            this.Controls.Add(this.flMasalar);
+            this.Controls.Add(this.flKatlar);
+            this.Name = "AnaEkranForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "AnaEkranForm";
+            this.Load += new System.EventHandler(this.AnaEkranForm_Load);
+            this.tblUrun.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbResim)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

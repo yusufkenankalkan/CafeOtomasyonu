@@ -40,6 +40,7 @@ namespace CafeOtomasyonu.Forms
             cmbKategori.DataSource = null;
             cmbUrun.DataSource = null;
             pbResim.Image = null;
+            
 
             foreach (var item in Context.Masalar)
             {
@@ -62,11 +63,12 @@ namespace CafeOtomasyonu.Forms
                 Button btnKategori = new Button();
                 btnKategori.Text = item.KategoriIsmi;
                 btnKategori.Size = new Size(125, 50);
-
+                
 
             }
             _seciliMasa = Context.Masalar.Find(x => x.Id.ToString() == (sender as Button).Name);
             cmbKategori.DataSource = Context.Kategoriler;
+            
 
         }
 
@@ -88,6 +90,20 @@ namespace CafeOtomasyonu.Forms
                 pbResim.Image = (Image)(new ImageConverter().ConvertFrom(urun.Foto));
             }
 
+        }
+
+        private void lstHesap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            
+            lstHesap.Items.Add(cmbUrun.SelectedItem);
+           
+            
         }
     }
 }
