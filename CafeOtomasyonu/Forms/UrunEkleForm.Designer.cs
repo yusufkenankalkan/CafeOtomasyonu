@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cmbKategori = new System.Windows.Forms.ComboBox();
-            this.btnSil = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
             this.btnEkle = new System.Windows.Forms.Button();
             this.lstListe = new System.Windows.Forms.ListBox();
+            this.cmsSil = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFiyat = new System.Windows.Forms.TextBox();
             this.pbResim = new System.Windows.Forms.PictureBox();
+            this.cmsSil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbResim)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,15 +53,15 @@
             this.cmbKategori.Size = new System.Drawing.Size(171, 23);
             this.cmbKategori.TabIndex = 19;
             // 
-            // btnSil
+            // btnGuncelle
             // 
-            this.btnSil.Location = new System.Drawing.Point(169, 290);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(77, 56);
-            this.btnSil.TabIndex = 17;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            this.btnGuncelle.Location = new System.Drawing.Point(169, 290);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(77, 56);
+            this.btnGuncelle.TabIndex = 17;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnEkle
             // 
@@ -71,6 +75,7 @@
             // 
             // lstListe
             // 
+            this.lstListe.ContextMenuStrip = this.cmsSil;
             this.lstListe.FormattingEnabled = true;
             this.lstListe.ItemHeight = 15;
             this.lstListe.Location = new System.Drawing.Point(262, 12);
@@ -78,6 +83,20 @@
             this.lstListe.Size = new System.Drawing.Size(159, 334);
             this.lstListe.TabIndex = 18;
             this.lstListe.SelectedIndexChanged += new System.EventHandler(this.lstListe_SelectedIndexChanged);
+            // 
+            // cmsSil
+            // 
+            this.cmsSil.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem});
+            this.cmsSil.Name = "cmsSil";
+            this.cmsSil.Size = new System.Drawing.Size(87, 26);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // txtAd
             // 
@@ -138,7 +157,7 @@
             this.Controls.Add(this.pbResim);
             this.Controls.Add(this.txtFiyat);
             this.Controls.Add(this.cmbKategori);
-            this.Controls.Add(this.btnSil);
+            this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.lstListe);
             this.Controls.Add(this.txtAd);
@@ -148,6 +167,8 @@
             this.Name = "UrunEkleForm";
             this.Text = "UrunEkleForm";
             this.Load += new System.EventHandler(this.UrunEkleForm_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UrunEkleForm_MouseClick);
+            this.cmsSil.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbResim)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -157,7 +178,7 @@
         #endregion
 
         private ComboBox cmbKategori;
-        private Button btnSil;
+        private Button btnGuncelle;
         private Button btnEkle;
         private ListBox lstListe;
         private TextBox txtAd;
@@ -166,5 +187,7 @@
         private Label label1;
         private TextBox txtFiyat;
         private PictureBox pbResim;
+        private ContextMenuStrip cmsSil;
+        private ToolStripMenuItem silToolStripMenuItem;
     }
 }

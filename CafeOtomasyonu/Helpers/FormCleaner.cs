@@ -16,7 +16,7 @@ namespace CafeOtomasyonu.Helpers
                 if (item is TextBox)
                     item.Text = string.Empty;
                 else if (item is ComboBox cmb)
-                    cmb.SelectedIndex = 0;
+                    cmb.SelectedIndex = -1;
                 else if (item is NumericUpDown nud)
                     nud.Value = 0;
                 else if (item is DateTimePicker dtp)

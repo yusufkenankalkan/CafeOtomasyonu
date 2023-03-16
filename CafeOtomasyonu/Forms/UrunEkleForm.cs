@@ -22,9 +22,10 @@ namespace CafeOtomasyonu.Forms
 
         private void UrunEkleForm_Load(object sender, EventArgs e)
         {
-
+            
             cmbKategori.DataSource = Context.Kategoriler;
             lstListe.DataSource = Context.Urunler;
+            this.FormCleaner(this.Controls);
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
@@ -41,7 +42,11 @@ namespace CafeOtomasyonu.Forms
                 {
                     urun.Foto = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
                 }
-                
+                if (urun.Foto == null)
+                {
+                    MessageBox.Show("Lütfen ürün fotoğrafı ekleyiniz");
+                    return;
+                }
                 Context.Urunler.Add(urun);
 
                 lstListe.DataSource = null;
@@ -70,18 +75,7 @@ namespace CafeOtomasyonu.Forms
         }
 
 
-        private void btnSil_Click(object sender, EventArgs e)
-        {
-            if (lstListe.SelectedItem == null)
-            {
-                return;
-            }
-            Urun seciliUrun = (Urun)lstListe.SelectedItem;
-            Context.Urunler.Remove(seciliUrun);
-            DataHelpers.Save(Context);
-            lstListe.DataSource = null;
-            lstListe.DataSource = Context.Urunler;
-        }
+
 
         private void pbResim_Click(object sender, EventArgs e)
         {
@@ -94,6 +88,41 @@ namespace CafeOtomasyonu.Forms
             {
                 pbResim.Image = Image.FromFile(dosyaAc.FileName);
             }
+            DataHelpers.Save(Context);
+        }
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (lstListe.SelectedItem == null)
+            {
+                return;
+            }
+            Urun seciliUrun = (Urun)lstListe.SelectedItem;
+            Context.Urunler.Remove(seciliUrun);
+            DataHelpers.Save(Context);
+            lstListe.DataSource = null;
+            lstListe.DataSource = Context.Urunler;
+            this.FormCleaner(Controls);
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (lstListe.SelectedItem == null) return;
+            Urun seciliUrun = (Urun)lstListe.SelectedItem;
+            seciliUrun.UrunAdi = txtAd.Text;
+            seciliUrun.Fiyat = decimal.Parse(txtFiyat.Text);
+            seciliUrun.Kategori = (Kategori)cmbKategori.SelectedItem;
+            seciliUrun.Foto = (byte[])(new ImageConverter().ConvertTo(pbResim.Image, typeof(byte[])));
+
+            lstListe.DataSource = null;
+            lstListe.DataSource = Context.Urunler;
+            DataHelpers.Save(Context);
+
+        }
+
+        private void UrunEkleForm_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.FormCleaner(Controls);
         }
     }
 }

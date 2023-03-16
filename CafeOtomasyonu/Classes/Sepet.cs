@@ -9,5 +9,6 @@ namespace CafeOtomasyonu.Classes
     public class Sepet
     {
         public List<Urun> Urunler { get; set; } = new List<Urun>();
+
     }
 }

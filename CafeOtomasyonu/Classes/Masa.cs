@@ -11,4 +11,7 @@ public class Masa
     public Guid Id { get; set; } = Guid.NewGuid();
     public string MasaIsmi { get; set; }
     public Kat BulunduguKat { get; set; }
+    public Sepet Sepet { get; set; }
+
+    
 }

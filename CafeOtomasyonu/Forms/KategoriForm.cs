@@ -78,6 +78,7 @@ namespace CafeOtomasyonu.Forms
             lstListe.DataSource = null;
             lstListe.DataSource = Context.Kategoriler;
             DataHelpers.Save(Context);
+            this.FormCleaner(Controls);
         }
     }
 }

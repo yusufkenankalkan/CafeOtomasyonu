@@ -12,7 +12,7 @@ namespace CafeOtomasyonu.Classes
         public string UrunAdi { get; set; }
         public decimal Fiyat { get; set; }
         public Kategori Kategori { get; set; }
-
+        public int SepetAdet { get; set; } = 0;
         public byte[]? Foto { get; set; } = null;
         public override string ToString()
         {

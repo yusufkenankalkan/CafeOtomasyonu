@@ -6,7 +6,6 @@ namespace CafeOtomasyonu
     public partial class Form1 : Form
     {
         KatOlusturucuForm _katOlusturucuForm;
-        Anaform _anaform;
         AnaEkranForm _anaEkranForm;
         KategoriForm _kategoriForm;
         UrunEkleForm _urunEkleForm;
@@ -65,14 +64,12 @@ namespace CafeOtomasyonu
             }
         }
 
-        private void urunEkleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void urunDuzenleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             _urunEkleForm = new UrunEkleForm();
             _urunEkleForm.Context = _datacontext;
             _urunEkleForm.Text = "Kategoriler";
             _urunEkleForm.Show();
         }
-
-
     }
 }
