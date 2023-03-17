@@ -32,6 +32,13 @@ namespace CafeOtomasyonu.Forms
         {
             try
             {
+                if (AynisiVarMi(txtAd.Text))
+                {
+                    MessageBox.Show("Ürün İsimleri Aynı Olamaz");
+                    txtAd.Clear();
+                    return;
+                }
+
                 Urun urun = new Urun()
                 {
                     UrunAdi = txtAd.Text,
@@ -53,6 +60,7 @@ namespace CafeOtomasyonu.Forms
                 lstListe.DataSource = Context.Urunler;
                 DataHelpers.Save(Context);
                 this.FormCleaner(Controls);
+                
             }
             catch (Exception ex)
             {
@@ -72,6 +80,7 @@ namespace CafeOtomasyonu.Forms
                 pbResim.Image = (Image)(new ImageConverter().ConvertFrom(urun.Foto));
             }
             cmbKategori.SelectedItem = Context.Kategoriler.Find(x => x.Id == urun.Kategori.Id);
+            
         }
 
 
@@ -103,12 +112,22 @@ namespace CafeOtomasyonu.Forms
             lstListe.DataSource = null;
             lstListe.DataSource = Context.Urunler;
             this.FormCleaner(Controls);
+            btnEkle.Enabled = true;
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             if (lstListe.SelectedItem == null) return;
             Urun seciliUrun = (Urun)lstListe.SelectedItem;
+            if (seciliUrun.UrunAdi != txtAd.Text)
+            {
+                if (AynisiVarMi(txtAd.Text))
+                {
+                    MessageBox.Show("Ürün İsimleri Aynı Olamaz");
+                    txtAd.Clear();
+                    return;
+                }
+            }
             seciliUrun.UrunAdi = txtAd.Text;
             seciliUrun.Fiyat = decimal.Parse(txtFiyat.Text);
             seciliUrun.Kategori = (Kategori)cmbKategori.SelectedItem;
@@ -117,12 +136,24 @@ namespace CafeOtomasyonu.Forms
             lstListe.DataSource = null;
             lstListe.DataSource = Context.Urunler;
             DataHelpers.Save(Context);
-
+            btnEkle.Enabled = true;
         }
 
         private void UrunEkleForm_MouseClick(object sender, MouseEventArgs e)
         {
             this.FormCleaner(Controls);
+            
+        }
+        private bool AynisiVarMi(string urunAdi)
+        {
+            foreach (var item in Context.Urunler)
+            {
+                if (urunAdi.ToLower() == item.UrunAdi.ToLower())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

@@ -77,7 +77,7 @@
             // urunKategoriEkleToolStripMenuItem
             // 
             this.urunKategoriEkleToolStripMenuItem.Name = "urunKategoriEkleToolStripMenuItem";
-            this.urunKategoriEkleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.urunKategoriEkleToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.urunKategoriEkleToolStripMenuItem.Text = "Kategori Ekle";
             this.urunKategoriEkleToolStripMenuItem.Click += new System.EventHandler(this.urunKategoriEkleToolStripMenuItem_Click);
             // 
@@ -94,6 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 325);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Name = "Form1";

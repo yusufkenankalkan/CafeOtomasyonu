@@ -114,12 +114,12 @@
             this.cmsSil.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.silToolStripMenuItem});
             this.cmsSil.Name = "cmsSil";
-            this.cmsSil.Size = new System.Drawing.Size(181, 48);
+            this.cmsSil.Size = new System.Drawing.Size(87, 26);
             // 
             // silToolStripMenuItem
             // 
             this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
             this.silToolStripMenuItem.Text = "Sil";
             this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
@@ -163,6 +163,7 @@
             this.Name = "KatOlusturucuForm";
             this.Text = "KatOlusturucuForm";
             this.Load += new System.EventHandler(this.KatOlusturucuForm_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KatOlusturucuForm_MouseClick);
             this.cmsSil.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

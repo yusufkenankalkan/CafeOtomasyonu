@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnEkle = new System.Windows.Forms.Button();
             this.lstListe = new System.Windows.Forms.ListBox();
+            this.cmsSil = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtAd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSil = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
+            this.cmsSil.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEkle
@@ -47,6 +51,7 @@
             // 
             // lstListe
             // 
+            this.lstListe.ContextMenuStrip = this.cmsSil;
             this.lstListe.FormattingEnabled = true;
             this.lstListe.ItemHeight = 15;
             this.lstListe.Location = new System.Drawing.Point(254, 21);
@@ -54,6 +59,20 @@
             this.lstListe.Size = new System.Drawing.Size(202, 229);
             this.lstListe.TabIndex = 9;
             this.lstListe.SelectedIndexChanged += new System.EventHandler(this.lstListe_SelectedIndexChanged);
+            // 
+            // cmsSil
+            // 
+            this.cmsSil.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem});
+            this.cmsSil.Name = "cmsSil";
+            this.cmsSil.Size = new System.Drawing.Size(87, 26);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(86, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
             // 
             // txtAd
             // 
@@ -71,22 +90,22 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Kategori Adı :";
             // 
-            // btnSil
+            // btnGuncelle
             // 
-            this.btnSil.Location = new System.Drawing.Point(160, 85);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(69, 47);
-            this.btnSil.TabIndex = 11;
-            this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            this.btnGuncelle.Location = new System.Drawing.Point(160, 85);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(69, 47);
+            this.btnGuncelle.TabIndex = 11;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click_1);
             // 
             // KategoriForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 288);
-            this.Controls.Add(this.btnSil);
+            this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnEkle);
             this.Controls.Add(this.lstListe);
             this.Controls.Add(this.txtAd);
@@ -94,6 +113,8 @@
             this.Name = "KategoriForm";
             this.Text = "KategoriForm";
             this.Load += new System.EventHandler(this.KategoriForm_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.KategoriForm_MouseClick);
+            this.cmsSil.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,6 +126,8 @@
         private ListBox lstListe;
         private TextBox txtAd;
         private Label label1;
-        private Button btnSil;
+        private Button btnGuncelle;
+        private ContextMenuStrip cmsSil;
+        private ToolStripMenuItem silToolStripMenuItem;
     }
 }

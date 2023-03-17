@@ -36,9 +36,18 @@ public partial class KatOlusturucuForm : Form
         txtKatIsmi.Text = seciliKat.KatIsmi;
         txtKatSirasi.Text = seciliKat.KatSirasi.ToString();
         txtMasaSayisi.Text = seciliKat.MasaSayisi.ToString();
+        //btnEkle.Enabled = false;
     }
     private void btnEkle_Click(object sender, EventArgs e)
+
     {
+        if (AynisiVarMi(txtKatIsmi.Text))
+        {
+            MessageBox.Show("Kat İsimleri Aynı Olamaz");
+            txtKatIsmi.Clear();
+            return;
+        }
+
         Kat yeniKat = new Kat()
         {
             KatIsmi = txtKatIsmi.Text,
@@ -53,7 +62,7 @@ public partial class KatOlusturucuForm : Form
             masa.MasaIsmi = "M" + i.ToString();
             masa.BulunduguKat = yeniKat;
             Context.Masalar.Add(masa);
-            
+
         }
 
         Context.Kats.Add(yeniKat);
@@ -66,15 +75,25 @@ public partial class KatOlusturucuForm : Form
 
     private void btnGuncelle_Click(object sender, EventArgs e)
     {
+
         if (lstKatlar.SelectedItem == null) return;
         Kat kat = (Kat)lstKatlar.SelectedItem;
+        if (kat.KatIsmi != txtKatIsmi.Text)
+        {
+            if (AynisiVarMi(txtKatIsmi.Text))
+            {
+                MessageBox.Show("Kat İsimleri Aynı Olamaz");
+                txtKatIsmi.Clear();
+                return;
+            }
+        }
         kat.KatIsmi = txtKatIsmi.Text;
         kat.KatSirasi = int.Parse(txtKatSirasi.Text);
         kat.MasaSayisi = int.Parse(txtMasaSayisi.Text);
         lstKatlar.DataSource = null;
         lstKatlar.DataSource = Context.Kats;
         DataHelpers.Save(Context);
-        
+        btnEkle.Enabled = true;
     }
 
     private void silToolStripMenuItem_Click(object sender, EventArgs e)
@@ -88,6 +107,23 @@ public partial class KatOlusturucuForm : Form
         DataHelpers.Save(Context);
         lstKatlar.DataSource = null;
         lstKatlar.DataSource = Context.Kats;
+        this.FormCleaner(Controls);
+        btnEkle.Enabled = true;
+    }
+    private bool AynisiVarMi(string katIsmi)
+    {
+        foreach (var item in Context.Kats)
+        {
+            if (katIsmi.ToLower() == item.KatIsmi.ToLower())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void KatOlusturucuForm_MouseClick(object sender, MouseEventArgs e)
+    {
         this.FormCleaner(Controls);
     }
 }

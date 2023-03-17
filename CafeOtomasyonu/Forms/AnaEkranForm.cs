@@ -90,8 +90,8 @@ namespace CafeOtomasyonu.Forms
             {
                 lstSepet.DataSource = _seciliMasa.Sepet.Urunler;
             }
-            cmbKategori.SelectedIndex = 0;
-            cmbUrun.SelectedIndex = 0;
+            //cmbKategori.SelectedIndex = 0;
+            //cmbUrun.SelectedIndex = 0;
         }
 
         private void cmbKategori_SelectedIndexChanged(object sender, EventArgs e)
@@ -191,6 +191,7 @@ namespace CafeOtomasyonu.Forms
             {
                 MasaRengiBoya(_seciliMasa, Color.Green);
                 _seciliMasa.DoluMu = false;
+                
             }
             DataHelpers.Save(Context);
             cmbKategori.SelectedIndex = -1;

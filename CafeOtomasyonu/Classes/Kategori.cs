@@ -8,7 +8,24 @@ namespace CafeOtomasyonu.Classes
 {
     public class Kategori : Urun
     {
-        public string KategoriIsmi { get; set; }
+        private string _kategoriIsim;
+        public string KategoriIsmi
+        {
+            set
+            {
+                foreach (char harf in value)
+                {
+                    if (char.IsDigit(harf) || char.IsSymbol(harf) || char.IsPunctuation(harf))
+                        throw new Exception("Kategori alanınıza özel karakter veya sayı girişi yapılamaz");
+
+                }
+                _kategoriIsim = value;
+            }
+            get
+            {
+                return _kategoriIsim.ToUpper();
+            }
+        }
 
         public List<Urun> Urunler { get; set; } = new List<Urun>();
         public Urun Urun { get; set; }

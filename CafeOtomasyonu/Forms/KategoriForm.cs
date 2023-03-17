@@ -24,6 +24,13 @@ namespace CafeOtomasyonu.Forms
         {
             try
             {
+                if (AynisiVarMi(txtAd.Text))
+                {
+                    MessageBox.Show("Kategori İsimleri Aynı Olamaz");
+                    txtAd.Clear();
+                    return;
+                }
+
                 Kategori kategori = new Kategori()
                 {
                     KategoriIsmi = txtAd.Text
@@ -49,16 +56,39 @@ namespace CafeOtomasyonu.Forms
             }
             Kategori seciliKategori = (Kategori)lstListe.SelectedItem;
             txtAd.Text = seciliKategori.KategoriIsmi;
+            
 
         }
 
         private void KategoriForm_Load(object sender, EventArgs e)
         {
             lstListe.DataSource = Context.Kategoriler;
+            btnEkle.Enabled = true;
+        }
+        private void btnGuncelle_Click_1(object sender, EventArgs e)
+        {
+            if (lstListe.SelectedItem == null) return;
+            Kategori seciliKategori = (Kategori)lstListe.SelectedItem;
+            if (seciliKategori.KategoriIsmi != txtAd.Text)
+            {
+                if (AynisiVarMi(txtAd.Text))
+                {
+                    MessageBox.Show("Kategori İsimleri Aynı Olamaz");
+                    txtAd.Clear();
+                    return;
+                }
+            }
+            seciliKategori.UrunAdi = txtAd.Text;
+            lstListe.DataSource = null;
+            lstListe.DataSource = Context.Kategoriler;
+            btnEkle.Enabled = true;
+            DataHelpers.Save(Context);
+
         }
 
 
-        private void btnSil_Click(object sender, EventArgs e)
+
+        private void silToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (lstListe.SelectedItem == null)
             {
@@ -78,6 +108,23 @@ namespace CafeOtomasyonu.Forms
             lstListe.DataSource = null;
             lstListe.DataSource = Context.Kategoriler;
             DataHelpers.Save(Context);
+            this.FormCleaner(Controls);
+            btnEkle.Enabled = true;
+        }
+        private bool AynisiVarMi(string kategoriIsim)
+        {
+            foreach (var item in Context.Kategoriler)
+            {
+                if (kategoriIsim.ToLower() == item.KategoriIsmi.ToLower())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void KategoriForm_MouseClick(object sender, MouseEventArgs e)
+        {
             this.FormCleaner(Controls);
         }
     }

@@ -27,27 +27,22 @@ namespace CafeOtomasyonu
             if (_katOlusturucuForm == null || _katOlusturucuForm.IsDisposed)
             {
                 _katOlusturucuForm = new KatOlusturucuForm();
-                //_katOlusturucuForm.MdiParent = this;
+                _katOlusturucuForm.MdiParent = this;
                 _katOlusturucuForm.Text = "Kat Formu";
                 _katOlusturucuForm.Context = _datacontext;
                 _katOlusturucuForm.Show();
             }
         }
-        //anasayfa
+
         private void katlariGoruntuleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //if (_anaform == null || _anaform.IsDisposed)
-            //{
-            //    _anaform = new Anaform();
-            //    _anaform.Context = _datacontext;
-            //    _anaform.Text = "Katlar";
-            //    _anaform.Show();
-            //}
+
             if (_anaEkranForm == null || _anaEkranForm.IsDisposed)
             {
                 _anaEkranForm = new AnaEkranForm();
                 _anaEkranForm.Context = _datacontext;
-                _anaEkranForm.Text = "Katlar";
+                _anaEkranForm.MdiParent = this;
+                _anaEkranForm.Text = "Kat ve Masalar";
                 _anaEkranForm.Show();
             }
 
@@ -59,6 +54,7 @@ namespace CafeOtomasyonu
             {
                 _kategoriForm = new KategoriForm();
                 _kategoriForm.Context = _datacontext;
+                _kategoriForm.MdiParent = this;
                 _kategoriForm.Text = "Kategoriler";
                 _kategoriForm.Show();
             }
@@ -68,6 +64,7 @@ namespace CafeOtomasyonu
         {
             _urunEkleForm = new UrunEkleForm();
             _urunEkleForm.Context = _datacontext;
+            _urunEkleForm.MdiParent = this;
             _urunEkleForm.Text = "Kategoriler";
             _urunEkleForm.Show();
         }
