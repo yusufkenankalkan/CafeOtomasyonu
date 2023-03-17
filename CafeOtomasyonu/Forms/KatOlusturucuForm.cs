@@ -53,6 +53,7 @@ public partial class KatOlusturucuForm : Form
             masa.MasaIsmi = "M" + i.ToString();
             masa.BulunduguKat = yeniKat;
             Context.Masalar.Add(masa);
+            
         }
 
         Context.Kats.Add(yeniKat);

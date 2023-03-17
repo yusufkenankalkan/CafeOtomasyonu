@@ -12,6 +12,7 @@ public class Masa
     public string MasaIsmi { get; set; }
     public Kat BulunduguKat { get; set; }
     public Sepet Sepet { get; set; }
+    public bool DoluMu { get; set; } = false;
 
     
 }

@@ -9,6 +9,7 @@ namespace CafeOtomasyonu.Classes
     public class Sepet
     {
         public List<Urun> Urunler { get; set; } = new List<Urun>();
+        public decimal ToplamFiyat { get; set; } = 0;
 
     }
 }
